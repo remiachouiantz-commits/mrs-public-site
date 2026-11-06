@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Supprimer un compte Meet Ride & Share</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><strong>Meet Ride & Share</strong><nav aria-label="Pages MRS"><a href="index.html">Accueil</a><a href="privacy.html">Confidentialité</a><a href="support.html">Support</a></nav></header>
+  <main>
+    <h1>Supprimer votre compte Meet Ride & Share (MRS)</h1>
+    <p>Vous pouvez demander ici la suppression définitive de votre compte MRS. Si le formulaire est momentanément indisponible, contactez <a href="mailto:mrs.support21@gmail.com">mrs.support21@gmail.com</a>.</p>
+    <p>Cette page permet de demander la suppression même sans accès à l’application. Connectez-vous avec l’adresse email déclarée pour votre compte MRS et votre mot de passe, puis confirmez. Aucune vérification de votre boîte email n’est nécessaire pour cette demande.</p>
+    <p>La demande concerne le compte Auth, le profil, l’avatar, les sessions et points GPS bruts, les capteurs personnels, les relations, le contenu personnel des messages et les jetons push. Un emplacement neutre sans contenu ni identité peut préserver la cohérence des conversations des autres. Les balades personnelles futures sont annulées et dépubliées ; les balades de club futures sont transférées à un responsable autorisé ou annulées. Les avis des autres participants restent disponibles sans identité de l’ancien organisateur.</p>
+    <p>Les données de logs directement personnelles non nécessaires sont effacées. Seul un journal technique minimal nécessaire à la preuve de suppression, à la sécurité ou à l'audit peut être conservé jusqu'à 12 mois après l'événement ou la fin du traitement, sans email, pseudo, avatar, GPS, contenu de message ni profil détaillé. Une conservation exceptionnelle exige un motif réel, documenté, limité et révisé. Les sauvegardes historiques et les journaux des prestataires suivent leurs propres cycles techniques : leur effacement n'est pas instantané. En cas de restauration ancienne, les données réintroduites doivent être à nouveau effacées.</p>
+    <p>Les signalements restent accessibles pendant leur instruction aux personnes chargées de la modération. Après clôture, seules les données nécessaires à la preuve et à la modération sont conservées pendant 12 mois maximum, sauf conservation exceptionnelle réelle et documentée. Les données directement personnelles devenues inutiles sont retirées selon le contrat de suppression.</p>
+    <p>La suppression est déclenchée automatiquement dès la confirmation définitive, sans délai volontaire de 7 ou 30 jours. Un blocage métier ou un incident technique peut nécessiter une action préalable ou une reprise ; une réponse en attente n'est pas une confirmation de suppression. Les données déjà détruites ne peuvent pas être restaurées.</p>
+    <p>Si vous possédez un club, sa propriété doit d’abord être transférée à un administrateur actif. Contactez le support MRS si aucun successeur n’est disponible.</p>
+    <p>En V1, seule la suppression que vous demandez et confirmez est active. <strong>Aucune suppression automatique pour inactivité n'est active.</strong> Le mécanisme d'inactivité est préparé pour une éventuelle version future, mais désactivé par défaut en production.<!-- FEATURE_PREPARED_BUT_DISABLED --></p>
+    <h2>1. Confirmer votre identité</h2>
+    <form id="email-form">
+      <label for="email">Adresse email du compte MRS</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <label for="password">Mot de passe du compte MRS</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button id="sign-in" type="submit" disabled>Continuer</button>
+    </form>
+    <form id="delete-form" hidden>
+      <h2>2. Confirmer la suppression</h2>
+      <p>Compte connecté : <strong id="signed-in-email"></strong>. La suppression est définitive. Si vous possédez un Club, sa propriété doit être transférée avant cette étape.</p>
+      <label class="checkbox-label" for="understood"><input id="understood" type="checkbox" required> Je comprends que mon compte et mes données personnelles seront supprimés de façon irréversible.</label>
+      <label for="confirmation">Saisissez SUPPRIMER pour confirmer</label>
+      <input id="confirmation" autocomplete="off" spellcheck="false" required>
+      <button id="delete-account" type="submit">Supprimer définitivement mon compte</button>
+    </form>
+    <p id="status" class="status" role="status" aria-live="polite">Chargement du formulaire…</p>
+    <p>Si vous avez perdu votre mot de passe ou l’accès à l’adresse email déclarée, contactez le support MRS : <span id="support-contact"><a href="mailto:mrs.support21@gmail.com?subject=Suppression%20compte%20MRS">mrs.support21@gmail.com</a></span>. Une vérification d’identité adaptée sera nécessaire.</p>
+  </main>
+  <script src="./delete-account-config.js"></script>
+  <script type="module" src="./account-deletion.js"></script>
+  <footer>Rémi Achouiantz, entrepreneur individuel · SIRET 521 770 016 00025 · 403 rue Beau-Soleil, 12100 Millau, France. APE/NAF 8551Z — Enseignement de disciplines sportives et d’activités de loisirs.</footer>
+</body>
+</html>
