@@ -64,8 +64,9 @@ function deletionError(code) {
   return "La suppression n’a pas été confirmée. Réessayez ou contactez le support MRS.";
 }
 
-if (!validConfig(config)) {
-  show("Ce formulaire n’est pas encore disponible. Contactez le support MRS.", "error");
+if (!validConfig(config) || config.webDeletionEnabled === false) {
+  emailForm.hidden = true;
+  show("La suppression Web n’est pas encore disponible. Contactez le support MRS pour demander la suppression de votre compte.", "error");
 } else {
   const supportLink = document.createElement("a");
   supportLink.href = `mailto:${config.supportEmail}?subject=Suppression%20compte%20MRS`;
